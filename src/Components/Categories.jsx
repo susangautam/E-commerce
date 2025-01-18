@@ -6,6 +6,10 @@ const Categories = ({ onCategorySelect }) => {
     { name: "Electronics", image: "/electronics.jpeg" },
     { name: "Grocery", image: "/grocery.jpg" },
     { name: "Musical Instruments", image: "/music.jpg" },
+    { name: "Books", image: "/books.jpg" },
+    { name: "Furniture", image: "/furniture.jpg" },
+    { name: "Toys", image: "/toy.jpg" },
+    { name: "Beauty Products", image: "/beauty.jpg" },
   ];
 
   return (
