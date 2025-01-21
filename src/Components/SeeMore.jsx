@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
-import { useNavigate } from "react-router-dom";
 
-const Categories = ({ onCategorySelect }) => {
+const SeeMore = ({ onCategorySelect }) => {
   const categories = [
     { name: "Clothing", image: "/clothing.png" },
     { name: "Electronics", image: "/electronics.jpeg" },
@@ -11,16 +10,18 @@ const Categories = ({ onCategorySelect }) => {
     { name: "Furniture", image: "/furniture.jpg" },
     { name: "Toys", image: "/toy.jpg" },
     { name: "Beauty Products", image: "/beauty.jpg" },
+    { name: "Sports Equipment", image: "/sports.jpg" },
+    { name: "Home Decor", image: "/decor.jpg" },
+    { name: "Jewelry", image: "/jewelry.jpg" },
+    { name: "Pet Supplies", image: "/pets.jpg" },
   ];
-
-  const navigate = useNavigate();
 
   return (
     <section className="py-16">
       <div className="container mx-auto">
-        <h2 className="text-2xl font-bold text-center mb-8">Shop by Categories</h2>
+        <h2 className="text-2xl font-bold text-center mb-8">All Categories</h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          {categories.slice(0, 4).map((category) => (
+          {categories.map((category) => (
             <div
               key={category.name}
               onClick={() => onCategorySelect(category.name)}
@@ -37,21 +38,13 @@ const Categories = ({ onCategorySelect }) => {
             </div>
           ))}
         </div>
-        <div className="text-center mt-8">
-          <button
-            onClick={() => navigate("/see-more")}
-            className="px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition"
-          >
-            See More
-          </button>
-        </div>
       </div>
     </section>
   );
 };
 
-Categories.propTypes = {
+SeeMore.propTypes = {
   onCategorySelect: PropTypes.func.isRequired,
 };
 
-export default Categories;
+export default SeeMore;
